@@ -1,0 +1,344 @@
+<div class="container mt-5">
+  <div class="top-btn-section d-flex justify-content-between mb-3">
+    <!-- Button to toggle product section (Left aligned) -->
+    <button class="btn w-20 d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#productSection" aria-expanded="false" aria-controls="productSection">
+      View Products
+      <img src="assets/images/down-arrow.png" style="height: 35px; width: 35px; margin-left: 10px;">
+    </button>
+    
+    <!-- Back Button (Right aligned) -->
+    <button class="btn back-btn" [routerLink]="['/products']">
+      <span>
+        <img src="assets/images/arrow-back.png" class="back-icon">Back
+      </span>
+    </button>
+  </div>
+  
+    <!-- Collapsible product section -->
+    <div class="collapse" id="productSection">
+      <div class="product-section">
+        <h4 class="text-center mb-3">Product List</h4>
+  
+        <!-- Product Items -->
+        <div *ngFor="let product of products" class="product-item d-flex justify-content-between mb-2">
+          <span><strong>{{ product.name }}</strong></span>
+          <span>Quantity: {{ product.quantity }}</span>
+        </div>
+  
+        <!-- Total Price -->
+        <div class="total-price mt-3 p-2 bg-light text-end">
+          <h5><strong>Total Price: ${{ totalPrice }}</strong></h5>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Button to toggle customer details form -->
+    <button class="btn w-20 mt-4 mb-3 d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#customerDetailsForm" aria-expanded="false" aria-controls="customerDetailsForm">
+      Enter Customer Details
+      <img src="assets/images/down-arrow.png" style="height: 35px; width: 35px; margin-left: 10px;">
+    </button>
+  
+    <!-- Collapsible form section -->
+    <div class="collapse" id="customerDetailsForm">
+      <div class="customer-form-section">
+        <h4 class="text-center mb-3">Customer Details</h4>
+  
+        <!-- Customer Details Form -->
+        <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+          <!-- Name and Email in a single row (50-50) -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="customerName" class="form-label">Name</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="customerName" 
+                name="customerName" 
+                placeholder="Enter your full name" 
+                required 
+                [(ngModel)]="customerDetails.name" 
+                #customerName="ngModel">
+              <!-- Validation message -->
+              <div class="text-danger" *ngIf="customerName.invalid && customerName.touched">
+                Name is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="customerEmail" class="form-label">Email</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="customerEmail" 
+                name="customerEmail" 
+                placeholder="Enter your email" 
+                required 
+                email 
+                [(ngModel)]="customerDetails.email" 
+                #customerEmail="ngModel">
+              <!-- Validation message -->
+              <div class="text-danger" *ngIf="customerEmail.invalid && customerEmail.touched">
+                Please enter a valid email.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Address Section -->
+          <h5 class="mt-4">Address</h5>
+  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="flatNo" class="form-label">Flat No / Building</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="flatNo" 
+                name="flatNo" 
+                placeholder="Flat No / Building" 
+                required 
+                [(ngModel)]="customerDetails.address.flatNo" 
+                #flatNo="ngModel">
+              <div class="text-danger" *ngIf="flatNo.invalid && flatNo.touched">
+                Flat No / Building is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="street" class="form-label">Street / Area / Colony</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="street" 
+                name="street" 
+                placeholder="Street / Area / Colony" 
+                required 
+                [(ngModel)]="customerDetails.address.street" 
+                #street="ngModel">
+              <div class="text-danger" *ngIf="street.invalid && street.touched">
+                Street / Area / Colony is required.
+              </div>
+            </div>
+          </div>
+  
+          <!-- City / State / Country -->
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="city" class="form-label">City</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="city" 
+                name="city" 
+                placeholder="City" 
+                required 
+                [(ngModel)]="customerDetails.address.city" 
+                #city="ngModel">
+              <div class="text-danger" *ngIf="city.invalid && city.touched">
+                City is required.
+              </div>
+            </div>
+  
+            <div class="col-md-4 mb-3">
+              <label for="state" class="form-label">State</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="state" 
+                name="state" 
+                placeholder="State" 
+                required 
+                [(ngModel)]="customerDetails.address.state" 
+                #state="ngModel">
+              <div class="text-danger" *ngIf="state.invalid && state.touched">
+                State is required.
+              </div>
+            </div>
+  
+            <div class="col-md-4 mb-3">
+              <label for="country" class="form-label">Country</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="country" 
+                name="country" 
+                placeholder="Country" 
+                required 
+                [(ngModel)]="customerDetails.address.country" 
+                #country="ngModel">
+              <div class="text-danger" *ngIf="country.invalid && country.touched">
+                Country is required.
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <!-- Pin Code -->
+            <div class="col-md-4 mb-3">
+              <label for="pincode" class="form-label">Pin Code</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="pincode" 
+                name="pincode" 
+                placeholder="Pin Code" 
+                required 
+                pattern="[0-9]{6}" 
+                [(ngModel)]="customerDetails.address.pincode" 
+                #pincode="ngModel">
+              <div class="text-danger" *ngIf="pincode.invalid && pincode.touched">
+                Please enter a valid 6-digit pin code.
+              </div>
+            </div>
+  
+            <!-- Contact No -->
+            <div class="col-md-4 mb-3">
+              <label for="contactNo" class="form-label">Contact Number</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="contactNo" 
+                name="contactNo" 
+                placeholder="Enter your contact number" 
+                required 
+                pattern="[0-9]{10}" 
+                [(ngModel)]="customerDetails.contactNo" 
+                #contactNo="ngModel">
+              <div class="text-danger" *ngIf="contactNo.invalid && contactNo.touched">
+                Please enter a valid 10-digit contact number.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Submit Button
+          <button type="submit" class="btn btn-buy" [disabled]="customerForm.invalid">
+            Buy
+          </button> -->
+
+           <!-- Buy Button -->
+            <button 
+            type="button" 
+            class="btn btn-buy" 
+            data-bs-toggle="modal" 
+            data-bs-target="#paymentModal">
+            Buy
+            </button>
+
+          <!-- Payment Modal -->
+          <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="paymentModalLabel">Payment Details</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                  <form id="paymentForm">
+
+                    <!-- Card Type -->
+                    <div class="mb-3">
+                      <label for="cardType" class="form-label">Card Type</label>
+                      <select class="form-select" id="cardType" name="cardType">
+                        <option value="" disabled selected>Select Card Type</option>
+                        <option value="Visa">Visa</option>
+                        <option value="MasterCard">MasterCard</option>
+                        <option value="American Express">American Express</option>
+                      </select>
+                    </div>
+
+                    <!-- Card Number -->
+                    <div class="mb-3">
+                      <label for="cardNumber" class="form-label">Card Number</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="cardNumber" 
+                        name="cardNumber" 
+                        placeholder="Enter 16-digit card number">
+                    </div>
+
+                    <!-- CVV -->
+                    <div class="mb-3">
+                      <label for="cvv" class="form-label">CVV</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="cvv" 
+                        name="cvv" 
+                        placeholder="Enter 3-digit CVV">
+                    </div>
+
+                    <!-- OTP -->
+                    <div class="mb-3">
+                      <label for="otp" class="form-label">Enter OTP</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="otp" 
+                        name="otp" 
+                        placeholder="Enter 6-digit OTP">
+                    </div>
+
+                  </form>
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  
+                    <button 
+                      type="button" 
+                      class="btn btn-primary" 
+                      data-bs-target="#otpModal" 
+                      data-bs-toggle="modal" 
+                      data-bs-dismiss="modal">
+                      Buy Now
+                    </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 🔴 NEW: OTP Verification Modal -->
+          <div class="modal fade" id="otpModal" tabindex="-1" aria-labelledby="otpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="otpModalLabel">OTP Verification</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                  <form id="otpForm">
+                    <!-- OTP -->
+                    <div class="mb-3">
+                      <label for="otp" class="form-label">Enter OTP</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="otp" 
+                        name="otp" 
+                        placeholder="Enter 6-digit OTP">
+                    </div>
+                  </form>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button 
+                    type="button" 
+                    class="btn btn-success"
+                    data-bs-dismiss="modal" 
+                    (click)="approvePayment()">
+                    Approve Payment
+                  </button>
+                  <!-- 🔴 NEW: Approve Payment button triggers a function to verify the OTP -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 🔴 NEW: End of OTP Modal -->
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  

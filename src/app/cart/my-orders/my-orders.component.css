@@ -1,0 +1,133 @@
+/* General Container */
+.container {
+    max-width: 1200px; /* Slightly wider container to fit 6 items in one row */
+    margin: 50px auto; /* Center the container */
+    padding: 0 20px; /* Added some horizontal padding */
+  }
+  
+  /* Order Record Styling */
+  .order-record {
+    margin-bottom: 20px; /* Reduced space between orders */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  /* Product List Section */
+  .card-header {
+    padding: 8px 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .card-header h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* Product Card Styling */
+  .card {
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 10px; /* Reduced padding */
+  }
+  
+  .card-title {
+    font-size: 14px; /* Smaller font size for product title */
+    font-weight: bold;
+    margin-bottom: 8px; /* Reduced margin */
+  }
+  
+  .card-text {
+    font-size: 12px; /* Smaller font size for product details */
+    margin-bottom: 5px; /* Reduced space */
+  }
+  
+  /* Product Image Container */
+  .product-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+  
+  .product-image-container img {
+    max-width: 80%; /* Reduced image size */
+    max-height: 150px; /* Reduced image height */
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  /* Layout of the Products */
+  .row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap products onto new lines if necessary */
+  }
+  
+  .col-md-2 {
+    width: 16.66%; /* Adjust width to fit 6 products in one row */
+    padding: 5px; /* Reduce spacing between products */
+  }
+  
+  .card-body h5 {
+    font-size: 14px;
+  }
+  
+  /* Expected Delivery Date */
+  .mt-4 {
+    margin-top: 10px; /* Reduced space */
+  }
+  
+  .text-center h5 {
+    font-size: 14px; /* Smaller font size */
+  }
+  
+  /* Total Price Section */
+  .text-end h4 {
+    font-size: 16px; /* Smaller font size for total price */
+    font-weight: bold;
+  }
+  
+  /* Button Styling */
+  .btn {
+    padding: 6px 15px; /* Smaller button */
+    font-size: 12px; /* Smaller button text */
+    border-radius: 5px; /* Compact button */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 1200px) {
+    .container {
+      max-width: 100%;
+      padding: 10px; /* Reduce padding on smaller screens */
+    }
+  
+    .col-md-2 {
+      width: 16.66%; /* Ensure 6 items per row */
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .col-md-2 {
+      width: 33.33%; /* 3 items per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .col-md-2 {
+      width: 50%; /* 2 items per row on small screens */
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .col-md-2 {
+      width: 100%; /* 1 item per row on very small screens */
+    }
+  }
+  

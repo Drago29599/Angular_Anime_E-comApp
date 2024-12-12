@@ -1,0 +1,50 @@
+<div class="product-view-container">
+    <!-- Left Side: Product Image -->
+    <div class="product-image-container">
+      <!-- Add to Favorites Button -->
+      <button class="favorite-btn" (click)="addToFavorites()">
+        ❤️
+      </button>
+      <img src="assets/images/{{product?.image_url}}" alt="{{product?.name}}">
+    </div>
+  
+    <!-- Right Side: Product Details -->
+    <div class="product-details-container">
+      <!-- Product Name -->
+      <h1 class="product-title">{{product?.name}}</h1>
+  
+      <!-- Product Price -->
+      <p class="product-price">Price: {{ product?.price | currency:'USD' }}</p>
+  
+      <!-- Additional Product Info -->
+      <ul class="product-info-list">
+        <li><strong>Expected Delivery:</strong> {{ expectedDeliveryDate() }}</li>
+        <li><strong>Rating:</strong> ⭐⭐⭐⭐☆ (4.5/5)</li>
+        <li><strong>Views:</strong> 1.2k views</li>
+      </ul>
+  
+      <!-- Call to Action Buttons -->
+      <div class="action-buttons">
+        <button class="btn add-to-cart-btn" style="margin-right: 15px;" (click)="checkOut()">
+          <span>
+            <img src="assets/images/check-out.png" style="height: 35px; width: 35px; margin-right: 10px;">Check out
+          </span>
+        </button>
+        <button class="btn add-to-cart-btn" (click)="addToCart()">
+          <span>
+            <img src="assets/images/Add-cart.png" style="height: 35px; width: 35px; margin-right: 10px;" >Add to Cart
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bottom Back Button -->
+  <div class="bottom-card-view">
+    <button class="btn back-btn" [routerLink]="['/products']">
+      <span>
+        <img src="assets/images/arrow-back.png" class="back-icon">Back
+      </span>
+    </button>
+  </div>
+  

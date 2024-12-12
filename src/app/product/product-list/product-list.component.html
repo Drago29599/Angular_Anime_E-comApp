@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="container text-center">
+    <h2 class="brush-font"><img src="assets/images/confetti.png" style="height: 25px; width: 25px; margin-right: 10px; margin-top: 0; margin-bottom: 10px;" >Transform Your Space with Stunning Anime Art</h2>
+    <h3 class="brush-font-2">
+      <img src="assets/images/confetti-celbi.png" style="height: 35px; width: 35px; margin-right: 10px; margin-top: 0; margin-bottom: 10px;" >
+      Bring Anime to Life — Unique Posters That Turn Your Walls into Masterpieces!
+      <img src="assets/images/confetti-celbi.png" style="height: 35px; width: 35px; margin-left: 10px; margin-top: 0; margin-bottom: 10px;" >
+    </h3>
+    
+</div>
+  <h2>Our latest collection</h2>
+  <mat-form-field class="search-box">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search for products">
+  </mat-form-field>
+  <mat-form-field style="margin-left: 10px;">
+    <mat-select (selectionChange)="sortProducts($event.value)" placeholder="Filter">
+      <mat-option value="priceLowToHigh">Price: Low to High</mat-option>
+      <mat-option value="priceHighToLow">Price: High to Low</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="product-grid">
+    <div *ngFor="let product of paginatedProducts" class="product-card-container">
+      <mat-card class="product-card" [routerLink]="['/product', product.id]">  
+        <div class="image-container">
+          <img mat-card-image src="assets/images/{{product.image_url}}" alt="{{product.name}}">
+        </div>
+      </mat-card>
+      <div class="product-price">
+        {{ product.price | currency: 'USD' }}
+      </div>
+    </div>  
+  </div>
+  <!-- Pagination Controls -->
+  <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>

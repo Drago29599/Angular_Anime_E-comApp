@@ -1,0 +1,89 @@
+.notification-bar {
+    height: 50px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    /* font-weight: bold; */
+  }
+  
+  .notification-bar span {
+    display: inline-block;
+  }
+  
+  .promo-code {
+    margin-left: 10px; 
+    margin-right: 10px;
+  }
+  
+  .timer {
+    margin-left: 5px;
+  }
+
+  /* Optional styling for the badge */
+.badge {
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.navbar-brand {
+    
+  padding-left: 50px;
+}
+
+.footer-message{
+  font-size: 15px;
+  color: #1c2331;
+  margin: 50 auto;
+}
+
+
+.text-white img {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    
+    padding-left: 0px;
+  }
+  
+  .text-white img {
+    display: none;
+  }
+}
+
+@media (max-width: 578px) {
+  .navbar-brand {
+    
+    padding-left: 0px;
+  }
+  
+  .notification-bar {
+    height: 50px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    /* font-weight: bold; */
+  }
+
+  .footer-message{
+    font-size: 15px;
+    color: #1c2331;
+  }
+
+
+  .text-white img {
+    display: none;
+  }
+}
+  

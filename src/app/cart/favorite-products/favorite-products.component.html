@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="container text-center">
+    <h2>My Favorite Collection</h2>
+  </div>
+
+  <div class="product-grid">
+    <div *ngFor="let product of favProducts" class="product-card-container">
+      
+      <!-- New minus button for removing from favorites -->
+      <button 
+        class="remove-favorite-btn" 
+        (click)="removeFromFavorite(product)" 
+        title="Remove from Favorites">
+        &#x2212; <!-- Unicode minus sign -->
+      </button>
+
+      <mat-card class="product-card" [routerLink]="['/product', product.id]">  
+        <div class="image-container">
+          <img mat-card-image src="assets/images/{{product.image_url}}" alt="{{product.name}}">
+        </div>
+      </mat-card>
+
+      <div class="product-price">
+        {{ product.price | currency: 'USD' }}
+      </div>
+
+    </div>  
+  </div>
+</div>

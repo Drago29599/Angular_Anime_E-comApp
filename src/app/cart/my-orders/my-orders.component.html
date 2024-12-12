@@ -1,0 +1,54 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Order Summary</h2>
+  
+    <!-- Iterate over the 'purchase' array to display each grouped purchase by 'id' -->
+    <div *ngFor="let purchaseItem of purchase" class="order-record mb-4">
+      
+      <!-- Display Order ID -->
+      <div class="card-header">
+        <h4>Order ID: {{ purchaseItem.id }}</h4>
+      </div>
+  
+      <div class="card">
+        <div class="card-body">
+  
+          <!-- Product List Section -->
+          <h5>Products Ordered</h5>
+          <div class="row" >
+            <!-- Iterate over the 'products' array within each 'purchaseItem' -->
+            <div class="col-md-2" *ngFor="let product of purchaseItem.products">
+              <div class="card mb-3">
+                <!-- Product Image Container -->
+                <div class="product-image-container">
+                  <img src="assets/images/{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                </div>
+  
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                  <p class="card-text"><strong>Quantity:</strong> {{ product.quantity }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- Static Delivery Date Section -->
+          <div class="mt-4 text-start">
+            <h5><strong>Expected Delivery Date:</strong> {{ getDeliveryDate() }}</h5>
+          </div>
+  
+          <!-- Total Price Section -->
+          <div class="text-start mt-4">
+            <h4>Total Price: ${{ purchaseItem.totalPrice }}</h4>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <!-- Optional Button to Proceed or Go Back -->
+    <div class="text-center mt-4">
+      <button class="btn btn-primary">Back to Products</button>
+    </div>
+  </div>
+  
