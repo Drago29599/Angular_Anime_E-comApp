@@ -33,10 +33,12 @@
       </div>
     </div>  
   </div>
+  <div class="top-btn-section d-flex justify-content-end mb-3">
   <!-- Pagination Controls -->
-  <div class="pagination-controls">
-    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
-    <span>Page {{ currentPage }} of {{ totalPages }}</span>
-    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
   </div>
 </div>

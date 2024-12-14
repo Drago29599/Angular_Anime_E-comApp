@@ -87,7 +87,7 @@ img[mat-card-image] {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 75%;
+  /* margin-left: 75%; */
 }
 
 .pagination-controls button {
