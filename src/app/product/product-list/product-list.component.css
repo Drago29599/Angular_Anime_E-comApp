@@ -1,4 +1,17 @@
+.search-filter {
+  display: flex; 
+  flex-wrap: wrap; /* This allows elements to wrap when the screen gets smaller */
+  gap: 10px; /* Space between elements */
+  
+}
 
+
+.search-box, 
+.filter-box {
+  flex: 1 1 200px; /* The form fields will be at least 200px wide and grow as space allows */
+  min-width: 150px; /* Prevents them from shrinking too small */
+  max-width: 400px;
+}
 
 /* Grid Layout */
 .product-grid {
@@ -7,6 +20,7 @@
   grid-gap: 50px; 
   width: 100%;
 }
+
 
 .product-card-container {
   display: flex;
@@ -107,6 +121,17 @@ img[mat-card-image] {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+
+  .search-filter {
+    justify-content: space-between; 
+    gap: 10px;
+  }
+
+  .search-box, 
+  .filter-box {
+    flex: 1 1 45%; /* Each item takes about 45% of the available space */
+  }
+
   .product-grid {
     grid-template-columns: repeat(5, 1fr); 
   }
@@ -119,9 +144,27 @@ img[mat-card-image] {
     margin-bottom: 20px;
     margin-left: 65%;
   }
+
+  .top-text-product-list {
+    font-size: 25px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 900px) {
+
+  .search-filter {
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px;
+  }
+
+  .search-box, 
+  .filter-box {
+    flex: 1 1 100%; /* Make each input full width */
+    max-width: 100%;
+  }
+
   .product-grid {
     grid-template-columns: repeat(3, 1fr); 
   }
@@ -134,9 +177,27 @@ img[mat-card-image] {
     margin-bottom: 20px;
     margin-left: 50%;
   }
+
+  .top-text-product-list {
+    font-size: 20px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
+
+  .search-filter {
+    flex-direction: column; 
+    gap: 15px; /* Increase spacing between inputs */
+    width: 100%; 
+  }
+
+  .search-box, 
+  .filter-box {
+    width: 100%; /* Full width on small screens */
+    max-width: 100%; 
+  }
+
   .product-grid {
     grid-template-columns: repeat(2, 1fr); 
   }
@@ -149,11 +210,38 @@ img[mat-card-image] {
     margin-bottom: 20px;
     margin-left: 20%;
   }
+
+  .top-text-product-list {
+    font-size: 15px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
+
+  .search-filter {
+    flex-direction: column; 
+    gap: 15px; 
+    max-width: 100%; 
+    width: 100%; 
+    padding: 0 10px;
+    padding-bottom: 15px; 
+  }
+
+  .search-box, 
+  .filter-box {
+    width: 100%; 
+    max-width: 100%;
+     
+  }
+
   .product-grid {
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px; 
+    width: 80%;
+    margin: auto;
+     /* Product card styles */
   }
 
   .pagination-controls {
@@ -169,22 +257,25 @@ img[mat-card-image] {
     display: none;
   }
 
-  /* Product card styles */
-.product-card {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 80%; 
-  box-sizing: border-box;
-  max-width: 100px; 
-  /*height: 100%; /* This keeps the height as it is */
-}
+  .product-card {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 75%;
+    /* margin-left: 10px;  */
+    box-sizing: border-box;
+    /* max-width: 150px;  */
+    /*height: 100%; /* This keeps the height as it is */
+    position: relative; /* Ensures the child button can be positioned relative to this */
+    } 
+    
+    .top-text-product-list {
+      font-size: 15px;
+      text-align: center;
+    }
 
-/* Grid Layout */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-gap: 50px; 
-  width: 100%;
-}
+    .search-filter {
+      max-width: 60%;
+    }
+
 }

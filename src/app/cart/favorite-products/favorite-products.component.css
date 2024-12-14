@@ -93,6 +93,12 @@ img[mat-card-image] {
   color: #424242; 
 }
 
+.container-fav-top-text {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .product-grid {
@@ -116,8 +122,8 @@ img[mat-card-image] {
   .product-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px; 
-    width: 70%;
+    grid-gap: 30px; 
+    width: 80%;
     margin-left: 15%;
      /* Product card styles */
   }
@@ -126,7 +132,7 @@ img[mat-card-image] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100px;
+    max-width: 120px;
     /* margin-left: 35px;   */
     position: relative; /* This is key to position the minus button relative to this container */
     transition: transform 0.2s;
@@ -136,10 +142,10 @@ img[mat-card-image] {
   display: flex;
   justify-content: center; 
   align-items: center; 
-  height: 80%;
+  height: 100%;
   /* margin-left: 10px;  */
   box-sizing: border-box;
-  max-width: 100px; 
+  /* max-width: 150px;  */
   /*height: 100%; /* This keeps the height as it is */
   position: relative; /* Ensures the child button can be positioned relative to this */
   } 
