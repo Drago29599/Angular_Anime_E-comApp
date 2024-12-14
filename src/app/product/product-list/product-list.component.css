@@ -151,7 +151,7 @@ img[mat-card-image] {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .product-grid {
     grid-template-columns: 1fr; 
   }
@@ -164,4 +164,27 @@ img[mat-card-image] {
     margin-bottom: 20px;
     margin-left: 20%;
   }
+
+  .brush-font-2{
+    display: none;
+  }
+
+  /* Product card styles */
+.product-card {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 80%; 
+  box-sizing: border-box;
+  max-width: 100px; 
+  /*height: 100%; /* This keeps the height as it is */
+}
+
+/* Grid Layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-gap: 50px; 
+  width: 100%;
+}
 }

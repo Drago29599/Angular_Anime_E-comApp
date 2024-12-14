@@ -122,5 +122,13 @@
     align-items: center;
     justify-content: center;
   }
+
+  .nav-footer-products{
+    display: none;
+  }
+  
+  .nav-footer-usefullinks{
+    display: none;
+  }
 }
   

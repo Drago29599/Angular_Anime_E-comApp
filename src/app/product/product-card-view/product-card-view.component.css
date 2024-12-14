@@ -212,4 +212,15 @@
         text-align: center;
       }
   }
+
+  @media (max-width: 480px) {
+    .back-btn {
+      /* display: flex;
+      align-items: end; */
+      margin-left: 60%;
+      font-size: 14px;
+      padding: 10px 25px;
+      text-align: center;
+    }
+  }
   
