@@ -142,15 +142,8 @@
     background-color: #a3a6a4;
   }
   
-  /* Back Button Styles */
-.bottom-card-view {
-    display: flex;
-    justify-content: flex-end; /* Align the back button to the right */
-    padding-bottom: 20px;
-    margin-right:90px ;
-  }
-  
   .back-btn {
+    /* margin-left: 85%; */
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     padding: 15px 30px;
@@ -162,6 +155,7 @@
     transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
+    margin-right: 15px; /* Extra spacing from the right if needed */
   }
   
   .back-btn:hover {
@@ -214,13 +208,6 @@
   }
 
   @media (max-width: 480px) {
-    .back-btn {
-      /* display: flex;
-      align-items: end; */
-      margin-left: 60%;
-      font-size: 14px;
-      padding: 10px 25px;
-      text-align: center;
-    }
+    
   }
   

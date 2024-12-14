@@ -35,7 +35,8 @@ const routes: Routes = [
   {
     path:'my-orders',
     component:MyOrdersComponent
-  }
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 
 
 ];

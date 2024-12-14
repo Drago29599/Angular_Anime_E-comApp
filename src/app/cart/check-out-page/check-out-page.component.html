@@ -215,14 +215,27 @@
           </button> -->
 
            <!-- Buy Button -->
-            <button 
+            <!-- <button 
             type="button" 
             class="btn btn-buy" 
             data-bs-toggle="modal" 
             data-bs-target="#paymentModal">
             Buy
-            </button>
+            </button> -->
 
+            <div class="top-btn-section d-flex justify-content-end mb-3">
+              <!-- Button to toggle product section (Left aligned) -->
+              
+              
+              <!-- Back Button (Right aligned) -->
+              <button class="btn btn-buy" [routerLink]="['/products']"
+              [disabled]="customerForm.invalid"
+              type="button"  
+              data-bs-toggle="modal" 
+              data-bs-target="#paymentModal">
+                Buy
+              </button>
+            </div>
           <!-- Payment Modal -->
           <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
             <div class="modal-dialog">
