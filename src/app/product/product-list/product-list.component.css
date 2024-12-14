@@ -142,7 +142,7 @@ img[mat-card-image] {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 65%;
+    /* margin-left: 65%; */
   }
 
   .top-text-product-list {
@@ -175,7 +175,7 @@ img[mat-card-image] {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 50%;
+    /* margin-left: 50%; */
   }
 
   .top-text-product-list {
@@ -208,7 +208,7 @@ img[mat-card-image] {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 20%;
+    /* margin-left: 20%; */
   }
 
   .top-text-product-list {
@@ -250,7 +250,7 @@ img[mat-card-image] {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 20%;
+    /* margin-left: 20%; */
   }
 
   .brush-font-2{
