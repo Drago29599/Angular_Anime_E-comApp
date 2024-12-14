@@ -74,6 +74,10 @@ img[mat-card-image] {
   color: #333; /* Optional: You can customize the font color */
 }
 
+.brush-font-1 {
+  display: none;
+}
+
 .brush-font-2 {
   font-family: 'Lucida Handwriting', cursive;
   font-size: 15px; /* Optional: Adjust font size */
@@ -149,6 +153,11 @@ img[mat-card-image] {
     font-size: 25px;
     text-align: center;
   }
+
+  
+.brush-font-1 {
+  display: none;
+}
 }
 
 @media (max-width: 900px) {
@@ -182,6 +191,11 @@ img[mat-card-image] {
     font-size: 20px;
     text-align: center;
   }
+
+  
+  .brush-font-1 {
+  display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -214,6 +228,11 @@ img[mat-card-image] {
   .top-text-product-list {
     font-size: 15px;
     text-align: center;
+  }
+
+  
+    .brush-font-1 {
+      display: none;
   }
 }
 
@@ -276,6 +295,14 @@ img[mat-card-image] {
 
     .search-filter {
       max-width: 60%;
+    }
+
+    .brush-font-1 {
+      align-items: center;
+      font-family: 'Lucida Handwriting', cursive;
+      font-size: 30px; /* Optional: Adjust font size */
+      /* font-weight: bold;  */
+      color: #333; /* Optional: You can customize the font color */
     }
 
 }
