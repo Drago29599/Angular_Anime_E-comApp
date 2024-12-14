@@ -1,5 +1,6 @@
 /* General Container */
 .container {
+  
     max-width: 1200px; /* Slightly wider container to fit 6 items in one row */
     margin: 50px auto; /* Center the container */
     padding: 0 20px; /* Added some horizontal padding */
@@ -94,13 +95,34 @@
     font-weight: bold;
   }
   
-  /* Button Styling */
-  .btn {
-    padding: 6px 15px; /* Smaller button */
-    font-size: 12px; /* Smaller button text */
-    border-radius: 5px; /* Compact button */
+  
+  
+  
+  .back-btn {
+    /* margin-left: 85%; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    background-color: #dedede;
+    color: #090909;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-right: 15px; /* Extra spacing from the right if needed */
   }
   
+  .back-btn:hover {
+    background-color: #7f7f80;
+  }
+  
+  .back-icon {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+  }
   /* Responsive Design for Smaller Screens */
   @media (max-width: 1200px) {
     .container {
@@ -129,5 +151,6 @@
     .col-md-2 {
       width: 100%; /* 1 item per row on very small screens */
     }
+
   }
   

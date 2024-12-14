@@ -47,8 +47,16 @@
     </div>
   
     <!-- Optional Button to Proceed or Go Back -->
-    <div class="text-center mt-4">
-      <button class="btn btn-primary">Back to Products</button>
+    <div class="top-btn-section d-flex justify-content-end mb-3">
+      <!-- Button to toggle product section (Left aligned) -->
+      
+      
+      <!-- Back Button (Right aligned) -->
+      <button class="btn back-btn" [routerLink]="['/products']">
+        <span>
+          <img src="assets/images/arrow-back.png" class="back-icon">Back
+        </span>
+      </button>
     </div>
   </div>
   

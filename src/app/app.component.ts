@@ -11,7 +11,7 @@ type NewType = CartService;
 })
 export class AppComponent implements OnInit {
   
-  title = 'Ecom-App';
+  title = 'Anime One 8';
 
   notificationMessage: string = '';
   initialHours: number = 1;
