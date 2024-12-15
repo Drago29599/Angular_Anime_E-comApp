@@ -56,6 +56,7 @@ export class ProductListComponent implements OnInit{
     if (this.currentPage > 1) {
       this.currentPage--;
       this.paginate();
+      this.scrollToTop(); // Scroll to the top when next button is clicked
     }
   }
 
@@ -63,6 +64,7 @@ export class ProductListComponent implements OnInit{
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
       this.paginate();
+      this.scrollToTop(); // Scroll to the top when next button is clicked
     }
   }
   
@@ -86,5 +88,9 @@ export class ProductListComponent implements OnInit{
 
     this.currentPage = 1;  // Reset to first page after sorting
     this.updatePagination();
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 150, behavior: 'smooth' });
   }
 }
