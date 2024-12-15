@@ -13,6 +13,7 @@ export class CartViewComponent implements OnInit {
 
   products: Product[] = [];
   totalPrice : number =0;
+  isCartAvailable = false;
   constructor(private cartService: CartService,private sharedData : ShareDataService,
     private route : Router
   ){}
@@ -20,6 +21,9 @@ export class CartViewComponent implements OnInit {
   ngOnInit(): void {
    this.cartService.getCartItems().subscribe( data =>{
     this.products = this.groupProductsById(data);
+    if(this.products.length > 0){
+      this.isCartAvailable = true;
+    }
     this.totalPrice = this.getTotalCartPrice();
    })
 

@@ -1,49 +1,69 @@
 <div class="container-sm mt-5">
-  <h1 class="text-center mb-4">Your Cart</h1>
+  <div *ngIf="isCartAvailable">
+    <h1 class="text-center mb-4">Your Cart</h1>
 
-  <div class="card">
-    <div class="card-body">
-      <ul class="list-group">
+    <div class="card">
+      <div class="card-body">
+        <ul class="list-group">
 
-        <!-- Loop through products -->
-        <li class="list-group-item" *ngFor="let item of products">
-          <div class="d-flex justify-content-between align-items-center">
-            
-            <!-- Product Name -->
-            <div>
-              <strong>{{ item.name }}</strong>
-            </div>
-
-            <!-- Quantity & Price Row -->
-            <div class="d-flex align-items-center">
+          <!-- Loop through products -->
+          <li class="list-group-item" *ngFor="let item of products">
+            <div class="d-flex justify-content-between align-items-center">
               
-              <!-- Quantity Controls -->
-              <div class="d-flex align-items-center mx-2">
-                <button class="btn btn-outline-secondary btn-sm" (click)="decreaseQuantity(item.id)">-</button>
-                <span class="mx-2">{{ item.quantity }}</span>
-                <button class="btn btn-outline-secondary btn-sm" (click)="increaseQuantity(item.id)">+</button>
+              <!-- Product Name -->
+              <div>
+                <strong>{{ item.name }}</strong>
               </div>
 
-              <!-- Product Price -->
-              <div style="margin-left: 30px;">
-                <strong>Price: {{ pricePerProduct(item.quantity, item.price) | currency: 'USD' }}</strong>
+              <!-- Quantity & Price Row -->
+              <div class="d-flex align-items-center">
+                
+                <!-- Quantity Controls -->
+                <div class="d-flex align-items-center mx-2">
+                  <button class="btn btn-outline-secondary btn-sm" (click)="decreaseQuantity(item.id)">-</button>
+                  <span class="mx-2">{{ item.quantity }}</span>
+                  <button class="btn btn-outline-secondary btn-sm" (click)="increaseQuantity(item.id)">+</button>
+                </div>
+
+                <!-- Product Price -->
+                <div style="margin-left: 30px;">
+                  <strong>Price: {{ pricePerProduct(item.quantity, item.price) | currency: 'USD' }}</strong>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <!-- Total Price -->
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <span class="font-weight-bold">Total Price (USD)</span>
-          <span class="font-weight-bold">{{ totalPrice | currency: 'USD' }}</span>
-        </li>
+          <!-- Total Price -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="font-weight-bold">Total Price (USD)</span>
+            <span class="font-weight-bold">{{ totalPrice | currency: 'USD' }}</span>
+          </li>
 
-        <!-- Checkout Buttons -->
-        <li class="list-group-item text-center">
-          <button class="btn btn-warning mx-3" (click)="clearCart()">Clear</button>
-          <button class="btn btn-primary" (click)="checkOut()">Check Out</button>
-        </li>
-      </ul>
+          <!-- Checkout Buttons -->
+          <li class="list-group-item text-center">
+            <button class="btn btn-warning mx-3" (click)="clearCart()">Clear</button>
+            <button class="btn btn-primary" (click)="checkOut()">Check Out</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isCartAvailable" class="empty-cart">
+    <div class="image-container">
+      <img src="assets/images/empty-cart.png" >
+    </div> 
+    <h3>Your cart is empty ! Please continue shopping</h3>
+    <!-- Optional Button to Proceed or Go Back -->
+    <div class="top-btn-section d-flex justify-content-end mb-3">
+      <!-- Button to toggle product section (Left aligned) -->
+      
+      
+      <!-- Back Button (Right aligned) -->
+      <button class="btn back-btn" [routerLink]="['/products']">
+        <span>
+          <img src="assets/images/blue-arrow.png" class="back-icon">Home
+        </span>
+      </button>
     </div>
   </div>
 </div>

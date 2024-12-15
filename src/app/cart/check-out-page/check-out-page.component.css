@@ -79,3 +79,19 @@
   .top-btn-section{
     justify-content: space-between;
   }
+
+  .empty-cart {
+    text-align: center;
+  }
+
+  .image-container img {
+    height: 300px;
+    width: 350px;
+  }
+
+  @media (max-width: 480px) {
+    .image-container img {
+      height: 230px;
+      width: 280px;
+    }
+  }

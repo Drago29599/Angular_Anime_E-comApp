@@ -18,7 +18,7 @@ export class CheckOutPageComponent implements OnInit{
 
   products: Product[] = [];
   totalPrice : number =0;
-
+  isCartAvailable = false;
 
   customerDetails: UserDetails = {
     name: '',
@@ -44,7 +44,7 @@ export class CheckOutPageComponent implements OnInit{
   //   this.totalPrice = this.getTotalCartPrice();
   //  })
     this.products = this.getCartDetails();
-    console.log(this.products);
+    
     this.totalPrice = this.getTotalCartPrice();
   }
 

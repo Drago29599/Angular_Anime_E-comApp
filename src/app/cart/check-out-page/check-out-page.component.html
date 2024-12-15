@@ -1,4 +1,5 @@
 <div class="container mt-5">
+  <div *ngIf="isCartAvailable"> 
   <div class="top-btn-section d-flex justify-content-between mb-3">
     <!-- Button to toggle product section (Left aligned) -->
     <button class="btn w-20 d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#productSection" aria-expanded="false" aria-controls="productSection">
@@ -251,9 +252,11 @@
                       <label for="cardType" class="form-label">Card Type</label>
                       <select class="form-select" id="cardType" name="cardType">
                         <option value="" disabled selected>Select Card Type</option>
-                        <option value="Visa">Visa</option>
-                        <option value="MasterCard">MasterCard</option>
-                        <option value="American Express">American Express</option>
+                        <option value="Visa"> Visa
+                        </option>
+                        <option value="MasterCard">Rupay
+                          </option>
+                        <option value="American Express">MasterCard</option>
                       </select>
                     </div>
 
@@ -280,7 +283,7 @@
                     </div>
 
                     <!-- OTP -->
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                       <label for="otp" class="form-label">Enter OTP</label>
                       <input 
                         type="text" 
@@ -288,7 +291,7 @@
                         id="otp" 
                         name="otp" 
                         placeholder="Enter 6-digit OTP">
-                    </div>
+                    </div> -->
 
                   </form>
                 </div>
@@ -351,5 +354,24 @@
         </form>
       </div>
     </div>
+  </div>
+  <div *ngIf="!isCartAvailable" class="empty-cart">
+    <div class="image-container">
+      <img src="assets/images/empty-cart.png" >
+    </div> 
+    <h3>Your cart is empty ! Please continue shopping</h3>
+    <!-- Optional Button to Proceed or Go Back -->
+    <div class="top-btn-section d-flex justify-content-end mb-3">
+      <!-- Button to toggle product section (Left aligned) -->
+      
+      
+      <!-- Back Button (Right aligned) -->
+      <button class="btn back-btn" [routerLink]="['/products']">
+        <span>
+          <img src="assets/images/blue-arrow.png" class="back-icon">Home
+        </span>
+      </button>
+    </div>
+  </div>
   </div>
   
