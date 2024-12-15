@@ -155,7 +155,8 @@
     transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
-    margin-right: 15px; /* Extra spacing from the right if needed */
+    margin-right: 88px; /* Extra spacing from the right if needed */
+    margin-bottom: 15px;
   }
   
   .back-btn:hover {
