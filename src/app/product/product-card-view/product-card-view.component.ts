@@ -32,6 +32,7 @@ export class ProductCardViewComponent implements OnInit {
     
   ngOnInit(): void {
     this.sharedDataService.cartDetails = [];
+    this.scrollToTop();
   }
 
   expectedDeliveryDate(): string {
@@ -116,6 +117,8 @@ export class ProductCardViewComponent implements OnInit {
     }
   }
 
- 
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   
 }
