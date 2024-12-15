@@ -8,7 +8,6 @@ import { FavoriteProductsComponent } from './cart/favorite-products/favorite-pro
 import { MyOrdersComponent } from './cart/my-orders/my-orders.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: ''},
   {
     path:'' , redirectTo: '/products' , pathMatch:'full'
   },
@@ -37,7 +36,7 @@ const routes: Routes = [
     path:'my-orders',
     component:MyOrdersComponent
   },
-  
+  { path: '**', redirectTo: ''},
 
 
 ];
