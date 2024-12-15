@@ -1,4 +1,5 @@
 <div class="container mt-5">
+  <div  *ngIf="isMyOrderAvailable">
     <h2 class="text-center mb-4">Order Summary</h2>
   
     <!-- Iterate over the 'purchase' array to display each grouped purchase by 'id' -->
@@ -58,5 +59,24 @@
         </span>
       </button>
     </div>
+  </div>
+  <div *ngIf="!isMyOrderAvailable" class="empty-cart">
+    <div class="image-container">
+      <img src="assets/images/no-order.png" >
+    </div> 
+    <h3>Order history not vailable ! Please continue shopping</h3>
+    <!-- Optional Button to Proceed or Go Back -->
+    <div class="top-btn-section d-flex justify-content-end mb-3">
+      <!-- Button to toggle product section (Left aligned) -->
+      
+      
+      <!-- Back Button (Right aligned) -->
+      <button class="btn back-btn" [routerLink]="['/products']">
+        <span>
+          <img src="assets/images/blue-arrow.png" class="back-icon">Home
+        </span>
+      </button>
+    </div>
+  </div>
   </div>
   
