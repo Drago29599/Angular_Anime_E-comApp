@@ -123,6 +123,20 @@
     width: 25px;
     margin-right: 10px;
   }
+
+  .empty-cart {
+    text-align: center;
+  }
+
+  .empty-cart h3{
+    margin-top: 15px;
+  }
+  .image-container img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+  }
+
   /* Responsive Design for Smaller Screens */
   @media (max-width: 1200px) {
     .container {
@@ -144,6 +158,12 @@
   @media (max-width: 600px) {
     .col-md-2 {
       width: 50%; /* 2 items per row on small screens */
+    }
+
+    .image-container img {
+      height: 220px;
+      width: 220px;
+      border-radius: 50%;
     }
   }
   

@@ -13,13 +13,19 @@ export class MyOrdersComponent implements OnInit {
   purchase: PurchaseHistory[] = [
   ];
 
+  isMyOrderAvailable = false;
 
   constructor(private cartService : CartService){}
 
   ngOnInit(): void {
     this.cartService.getPurchaseData().subscribe( data =>{
       this.purchase = data;
-    })  
+      
+    })
+    
+    if(this.purchase.length  > 0){
+      this.isMyOrderAvailable = true;
+    }
   }
 
   getDeliveryDate(): string {
