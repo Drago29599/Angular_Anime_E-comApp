@@ -44,7 +44,9 @@ export class CheckOutPageComponent implements OnInit{
   //   this.totalPrice = this.getTotalCartPrice();
   //  })
     this.products = this.getCartDetails();
-    
+    if(this.products.length > 0){
+      this.isCartAvailable = true
+    }
     this.totalPrice = this.getTotalCartPrice();
   }
 
